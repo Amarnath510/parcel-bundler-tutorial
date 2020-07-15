@@ -1,4 +1,4 @@
-# Parcel tutorial
+# Parcel Bundler tutorial
 
 ### [Parcel](https://parceljs.org/)
 - Zero configuration web-application bundler. Just give input as start file like `parcel index.html` and it will generate a `dist` directory where you will have all the dependents that are included in your `index.html` and so-forth(which might in-turn have other included files etc)
@@ -71,6 +71,9 @@
   > npm run prod
   > ls -Slhr // compare the file sizes
   ```
+  
+## Deploy in Heroku
+- TODO
 
 ## Reference:
 - [Parcel Bundler - A SUPER Easy JavaScript Bundler for your Projects](https://www.youtube.com/watch?v=OK6akGZCC88)
