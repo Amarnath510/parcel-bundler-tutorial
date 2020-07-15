@@ -9,6 +9,8 @@
 - It also have a in-built live server where refresh automatically happens when something is changed
 - Include it as part of the scripts, use `npm run dev` to run app using `parcel`
 
+<img width="736" alt="parcel-features" src="https://user-images.githubusercontent.com/4599623/87525917-c7ac0900-c6a7-11ea-9a23-f25a0d8d1a57.png">
+
 ## Setup
 - `mkdir parcel-tutorial && cd parcel-tutorial`
 - npm init (give all default values by pressing enter)
@@ -38,7 +40,17 @@
 
   // your JS code
   ```
-- And put all your partials included in the `main.scss` file so that all these are available through out the app
+- And put all your partials included in the `main.scss` file so all of these will be available through out the app
+- **NOTE** If the project structure is not as above then assets won't be copied to the `dist` directory. In these cases, we will need [parcel-plugin-static-files-copy](https://www.npmjs.com/package/parcel-plugin-static-files-copy) and add below structure to your package.json file,
+  ```
+  // package.json
+  {
+    ...
+    "staticFiles": {
+        "staticPath": ["public", "vendor/public"]
+    }
+  }
+  ```
 
 ## Run parcel
 - Change package.json file,
@@ -50,3 +62,7 @@
 ```
 - Run, `npm run dev` to run the application
 - Run for Prod, `npm run prod` to generate production build for the same
+
+## Reference:
+- [Parcel Bundler - A SUPER Easy JavaScript Bundler for your Projects](https://www.youtube.com/watch?v=OK6akGZCC88)
+
