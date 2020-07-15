@@ -41,7 +41,7 @@
   // your JS code
   ```
 - And put all your partials included in the `main.scss` file so all of these will be available through out the app
-- **NOTE** If the project structure is not as above then assets won't be copied to the `dist` directory. In these cases, we will need [parcel-plugin-static-files-copy](https://www.npmjs.com/package/parcel-plugin-static-files-copy) and add below structure to your package.json file,
+- **NOTE** If the project structure is not as above then assets won't be copied to the `dist` directory. In these cases, we'll need [parcel-plugin-static-files-copy](https://www.npmjs.com/package/parcel-plugin-static-files-copy) and as suggested in the docs update package.json file as below,
   ```
   // package.json
   {
@@ -57,12 +57,12 @@
 ```
 "scripts": {
   "dev": "parcel src/index.html",
-  "prod": "parcel build src/index.html"
+  "build": "parcel build src/index.html"
 }
 ```
 - Run, `npm run dev` to run the application
-- Run for Prod, `npm run prod` to generate production build for the same
-- **NOTE:** The difference between above two commands is the size of the generated build
+- Run for Prod, `npm run build` to generate production build for the same
+- **NOTE:** The difference between above two commands is the size of the generated build also former one is readable
   ```
   > rm -rf dist
   > npm run dev
@@ -72,9 +72,32 @@
   > ls -Slhr // compare the file sizes
   ```
   
-## Deploy in Heroku
-- TODO
+## Deploy Parcel bundler in Heroku (same process for Webpack too, actually this example is from webpack source ;))
+- Now we have a build and we cannot run parcel direclty on production
+- We need a simple server like `express` and deploy our build
+- Install `express` server, `npm i express`
+- Create a `server.js` file under project root which will listen to the requests coming for this address and serve the required files
+  ```
+  const path = require('path');
+  const express = require('express');
+  const app = express();
+  app.use(express.static(path.join(__dirname, 'dist'))); // serves static files from `dist` directory
+  app.listen(process.env.PORT || 8080); // listens to the port given by heroku or default port as 8080
+  ```
+- Update `scripts` in `package.json`
+  ```
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+    "start": "node server.js",
+    "heroku-postbuild": "parcel build src/index.html"
+  }
+  ```
+- `git commit and push` all changes
+- `git push heroku master`
+- If no erros then hit, https://parcel-bundler-simple-tutorial.herokuapp.com/
 
 ## Reference:
 - [Parcel Bundler - A SUPER Easy JavaScript Bundler for your Projects](https://www.youtube.com/watch?v=OK6akGZCC88)
-
+- [Deploy your Webpack apps to Heroku in 3 simple steps](https://codeburst.io/deploy-your-webpack-apps-to-heroku-in-3-simple-steps-4ae072af93a8)
+- [Deploying webpack to Heroku](https://stackoverflow.com/a/41902436/967638) also check the github link in this answer
