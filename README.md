@@ -2,7 +2,7 @@
 
 ### [Parcel](https://parceljs.org/)
 - Zero configuration web-application bundler. Just give input as start file like `parcel index.html` and it will generate a `dist` directory where you will have all the dependents that are included in your `index.html` and so-forth(which might in-turn have other included files etc)
-- [parcel-bundler dependency](https://www.npmjs.com/package/parcel-bundler). Install it as dev dependency, `npm i -D parcel-bundler`
+- Install [parcel-bundler dependency](https://www.npmjs.com/package/parcel-bundler) as dev dependency, `npm i -D parcel-bundler`
 - Use this for small projects as this doesn't require any configurations like `Webpack`
 - It has in-built babel so it converts `latest JS` into `browser compatible one like ES5`
 - It also convert your `SCSS` files to `CSS` .. with zero configurations
@@ -62,6 +62,15 @@
 ```
 - Run, `npm run dev` to run the application
 - Run for Prod, `npm run prod` to generate production build for the same
+- **NOTE:** The difference between above two commands is the size of the generated build
+  ```
+  > rm -rf dist
+  > npm run dev
+  > ls -Slhr // note the size
+  > rm -rf dist
+  > npm run prod
+  > ls -Slhr // compare the file sizes
+  ```
 
 ## Reference:
 - [Parcel Bundler - A SUPER Easy JavaScript Bundler for your Projects](https://www.youtube.com/watch?v=OK6akGZCC88)
