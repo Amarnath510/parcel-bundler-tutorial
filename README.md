@@ -98,6 +98,9 @@
 - `git push heroku master`
 - If everything is fine then hit, https://parcel-bundler-simple-tutorial.herokuapp.com/
 
+<img width="1152" alt="parcel-bundler-tutorial-output" src="https://user-images.githubusercontent.com/4599623/87678468-9a8b5380-c798-11ea-97a1-322e2e9ce6ba.png">
+
+
 ## Reference:
 - [Parcel Bundler - A SUPER Easy JavaScript Bundler for your Projects](https://www.youtube.com/watch?v=OK6akGZCC88)
 - [Deploy your Webpack apps to Heroku in 3 simple steps](https://codeburst.io/deploy-your-webpack-apps-to-heroku-in-3-simple-steps-4ae072af93a8)
