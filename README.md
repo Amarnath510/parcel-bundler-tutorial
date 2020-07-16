@@ -2,11 +2,11 @@
 
 ### [Parcel](https://parceljs.org/)
 - Zero configuration web-application bundler. Just give input as start file (like `parcel index.html`) and it will bundle all the dependencies and put it under a `dist` directory where you will have all the dependents that are included in your `index.html` and so-forth(which might in-turn have other included files etc)
-- Install [parcel-bundler dependency](https://www.npmjs.com/package/parcel-bundler) as a dependency, `npm i parcel-bundler`
+- Install [parcel-bundler dependency](https://www.npmjs.com/package/parcel-bundler) as a **dev-dependency**, `npm i -D parcel-bundler` because we only need this during development and to generate build
 - Use this for small projects as this doesn't require any configurations like `Webpack`
 - It has in-built babel so it converts `latest JS` into `browser compatible one like ES5`
-- It also convert your `SCSS` files to `CSS` .. with zero configurations
-- It also have a in-built live server where refresh automatically happens when something is changed
+- It also converts your `SCSS` files to `CSS` with zero configurations
+- Also has a in-built live server where refresh automatically happens when something is changed. Really helpful during development
 - Include it as part of the scripts, use `npm run dev` to run app using `parcel`
 - Don't use bundlers as a server in prod. In Prod, use them only for build purpose and during development as a live server. For Prod use simple server like `express` (usage explained below).
 
@@ -16,8 +16,8 @@
 - `mkdir parcel-tutorial && cd parcel-tutorial`
 - npm init (give all default values by pressing enter)
 
-## Install Parcel
-- `npm i parcel-bundler`
+## Install Parcel as dev dependency
+- `npm i -D parcel-bundler` // Any bundler is needed only during development and for builds. Don't use these to run in Prod
 
 ## Project structure
 ```
@@ -73,7 +73,7 @@
   > ls -Slhr // compare the file sizes
   ```
   
-## Deploy Parcel bundler in Heroku (same process for Webpack too, actually this example is from webpack source ;))
+## Deploy Parcel build in Heroku (same process for Webpack too, actually this example is from webpack source ;))
 - Now we have a build and we cannot run parcel direclty on production
 - We need a simple server like `express` and deploy our build
 - Install `express` server, `npm i express`
