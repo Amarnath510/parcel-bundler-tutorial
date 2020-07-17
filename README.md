@@ -90,8 +90,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
-    "start": "node server.js",
-    "heroku-postbuild": "parcel build src/index.html"
+    "start": "node server.js",  // for Heroku deployment
+    "heroku-postbuild": "parcel build src/index.html" // for Heroku deployment
   }
   ```
 - `git commit and push` all changes
