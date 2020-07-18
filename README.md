@@ -33,17 +33,16 @@
 - Parcel parses all files and generate build files in dist folder
 - It takes input the root file which is `index.html`
 - **JS** root file (say `main.js`) is included in `index.html` so Parcel starts with root JS file and picks all the included files from here on
-- **CSS**(don't use CSS, kinda boring use **Sass**) root file (say `main.css`) usually will be included in root JS file (`index.html`) and parcel will parse that too.
-- **Sass:** but we will use **Sass** for our project so where do we include it?
-- Don't included Sass main file in `index.html` instead include it in `main.js` file just like any other JS file,
+- **CSS**: Don't use CSS, kinda boring use **Sass**
+- **Sass:** Where do we include it? Don't included Sass main file(`main.scss`) in `index.html` instead include it in `main.js` file just like any other JS file,
   ```
   import { add } from './calculate';
   import './styles/main.scss'; // You can import your root css file too here.
 
   // your JS code
   ```
-- And put all your partials included in the `main.scss` file so all of these will be available through out the app
-- **NOTE** If the project structure is not as above then assets won't be copied to the `dist` directory. In these cases, we'll need [parcel-plugin-static-files-copy](https://www.npmjs.com/package/parcel-plugin-static-files-copy) and as suggested in the docs update package.json file as below,
+- And include all your partials(by creating directories under `sass`) in `main.scss` file so all of these will be available through out the app
+- **NOTE** If the project structure is not as above then assets won't be copied to the `dist` directory. In these cases, we'll need [parcel-plugin-static-files-copy](https://www.npmjs.com/package/parcel-plugin-static-files-copy) and as suggested in the docs update `package.json` file as below,
   ```
   // package.json
   {
