@@ -55,12 +55,12 @@
 
 ## Run parcel
 - Change package.json file,
-```
-"scripts": {
-  "dev": "parcel src/index.html",
-  "build": "parcel build src/index.html"
-}
-```
+  ```
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+  ```
 - Run, `npm run dev` to run the application
 - Run for Prod, `npm run build` to generate production build for the same
 - **NOTE:** The difference between above two commands is the size of the generated build also former one is readable than later,
