@@ -14,7 +14,7 @@
 
 ## Setup
 - `mkdir parcel-tutorial && cd parcel-tutorial`
-- npm init (give all default values by pressing enter)
+- `npm init` (give all default values by pressing enter)
 
 ## Install Parcel as dev dependency
 - `npm i -D parcel-bundler` // Any bundler is needed only during development and for builds. Don't use these to run in Prod
