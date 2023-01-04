@@ -94,8 +94,10 @@
     "heroku-postbuild": "parcel build src/index.html" // for Heroku deployment
   }
   ```
-- `git commit and push` all changes
-- `git push heroku master`
+- `$ git commit and push` all changes
+- `$ heroku login`
+- `$ heroku create`
+- `$ git push heroku master or main`
 - If everything is fine then hit, https://parcel-bundler-simple-tutorial.herokuapp.com/
 
 <img width="1152" alt="parcel-bundler-tutorial-output" src="https://user-images.githubusercontent.com/4599623/87678468-9a8b5380-c798-11ea-97a1-322e2e9ce6ba.png">
