@@ -32,7 +32,7 @@
 ## How files are included?
 - Parcel parses all files and generate build files in dist folder
 - It takes input the root file which is `index.html`
-- **JS** root file (say `main.js`) is included in `index.html` so Parcel starts with root JS file and picks all the included files from here on
+- **JS** root file (say `main.js`) is included in `index.html` (`<script src="./js/main.js"></script>`) so Parcel starts with root JS file and picks all the included files from here on
 - **CSS**: Don't use CSS, kinda boring use **Sass**
 - **Sass:** Where do we include it? Don't included Sass main file(`main.scss`) in `index.html` instead include it in `main.js` file just like any other JS file,
   ```
